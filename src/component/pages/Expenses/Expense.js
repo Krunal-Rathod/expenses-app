@@ -1,17 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react';
+import ExpenseDate from './ExpenseDate';
+import './ExpenseItem.css';
+import Card from './Card';
 
 const Expense = (props) => {
+    const [title, setTitle] = useState(props.name);
+    //let title = props.name;
+
+    const eventHandler = () => {
+        setTitle('Updated!!!');
+        //console.log(title)
+    } 
+
     return (
         <>
-            <div className='card mb-3'>
-                <div className='card-header'>
-                    <h2 className='mb-3'>{props.expenseName}</h2>
-                    <h5>{props.expenseDate.toISOString()}</h5>
+            <Card className='expense-item'>
+                <ExpenseDate date={props.date} />
+                <div className='expense-item__description'>
+                    <h2>{title}</h2>
+                    <div className='expense-item__price'>${props.amount}</div>
                 </div>
-                <div className='card-body'>
-                    <h4>Price: ${props.expensePrice}</h4>
-                </div>
-            </div>
+                <button onClick={eventHandler}>Change Title</button>
+            </Card>
         </>
     )
 }

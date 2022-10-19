@@ -1,6 +1,4 @@
-import React from 'react'
-//import $ from 'jquery';
-//import Custom from './Custom';
+import React from 'react';
 
 const About = () => {
     return (
