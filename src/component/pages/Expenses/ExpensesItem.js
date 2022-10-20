@@ -2,6 +2,7 @@ import React from 'react';
 import Expense from './Expense';
 import Card from './Card';
 import './Expenses.css';
+import NewExpense from '../NewExpense/NewExpense';
 
 const ExpensesItem = () => {
     const expenses = [
@@ -33,22 +34,23 @@ const ExpensesItem = () => {
                             <Expense name={props.title} amount={props.price} date={props.date} />
                         ))
                     } */}
-                    <Card className='expenses '>
-                    <Expense
-                        name={expenses[0].title}
-                        amount={expenses[0].price}
-                        date={expenses[0].date}
-                    />
-                    <Expense
-                        name={expenses[1].title}
-                        amount={expenses[1].price}
-                        date={expenses[1].date}
-                    />
-                    <Expense
-                        name={expenses[2].title}
-                        amount={expenses[2].price}
-                        date={expenses[2].date}
-                    />
+                    <NewExpense />
+                    <Card className='expenses'>
+                        <Expense
+                            name={expenses[0].title}
+                            amount={expenses[0].price}
+                            date={expenses[0].date}
+                        />
+                        <Expense
+                            name={expenses[1].title}
+                            amount={expenses[1].price}
+                            date={expenses[1].date}
+                        />
+                        <Expense
+                            name={expenses[2].title}
+                            amount={expenses[2].price}
+                            date={expenses[2].date}
+                        />
                     </Card>
                 </div>
             </section>
